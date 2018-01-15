@@ -1,0 +1,32 @@
+package com.example.security.demoSpringSecurity.controllers;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class RestControllerTest {
+
+    RestController controller;
+
+    @Before
+    public void setUp(){
+        controller = new RestController();
+    }
+
+    @Test
+    public void infoPath(){
+        assertEquals(controller.getInfo(), "Spring security application: this is the only allowed request mapping");
+    }
+
+    @Test
+    public void tasksPath(){
+        assertEquals(controller.getTasks(), "Spring security application: this is the secured tasks request mapping");
+    }
+
+    @Test
+    public void objectivesPath(){
+        assertEquals(controller.getObjectives(), "Spring security application: this is the secured objectives request mapping");
+    }
+
+}
